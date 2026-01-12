@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+
+# Environments
+venv/
+.env
+
+# Uploads & Storage
+backend/storage/uploads/*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
