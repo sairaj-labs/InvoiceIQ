@@ -8,6 +8,7 @@ class Settings(BaseSettings):
     APP_NAME: str = "InvoiceIQ"
     APP_VERSION: str = "0.1.0"
     DATABASE_URL: str
+    GEMINI_API_KEY: str  
 
     class Config:
         env_file = BASE_DIR / ".env"

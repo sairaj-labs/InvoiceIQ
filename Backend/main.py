@@ -4,6 +4,7 @@ from api.v1.routes.vendor_routes import router as vendor_router
 from api.v1.routes.invoice_routes import router as invoice_router
 from api.v1.routes.upload_routes import router as upload_router
 from api.v1.routes.ocr_routes import router as ocr_router
+from api.v1.routes.extraction_routes import router as extraction_router
 
 
 import os
@@ -21,6 +22,8 @@ app.include_router(vendor_router, prefix="/api/v1/vendors")
 app.include_router(invoice_router, prefix="/api/v1/invoices")
 app.include_router(upload_router, prefix="/api/v1/upload")
 app.include_router(ocr_router, prefix="/api/v1/ocr")
+app.include_router(extraction_router, prefix="/api/v1/extract")
+
 
 
 @app.get("/")
