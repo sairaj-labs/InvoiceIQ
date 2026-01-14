@@ -20,6 +20,10 @@ class VendorRepository:
         return db.query(Vendor).all()
 
     @staticmethod
+    def get_by_name(db: Session, name: str):
+        return db.query(Vendor).filter(Vendor.name == name).first()
+    
+    @staticmethod
     def delete(db: Session, vendor_id: int):
         vendor = db.query(Vendor).filter(Vendor.id == vendor_id).first()
         if vendor:

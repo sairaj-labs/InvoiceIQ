@@ -12,6 +12,11 @@ class ItemRepository:
         return item
 
     @staticmethod
+    def bulk_create(db: Session, items: list[Item]):
+        db.bulk_save_objects(items)
+        db.commit()
+        
+    @staticmethod
     def get_by_invoice(db: Session, invoice_id: int):
         return db.query(Item).filter(Item.invoice_id == invoice_id).all()
 

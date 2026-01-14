@@ -1,5 +1,6 @@
-from sqlalchemy import Column, Integer, String, Float, ForeignKey, Date
+from sqlalchemy import Column, Integer, String, Float, ForeignKey, Date, DateTime
 from sqlalchemy.orm import relationship
+from datetime import datetime
 from .base import Base
 
 class Invoice(Base):
@@ -12,7 +13,8 @@ class Invoice(Base):
     subtotal = Column(Float, nullable=True)
     tax = Column(Float, nullable=True)
     total = Column(Float, nullable=True)
+    
     currency = Column(String, default="INR")
-
+    
     vendor = relationship("Vendor")
     items = relationship("Item", back_populates="invoice")
